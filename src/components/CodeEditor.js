@@ -1,77 +1,3 @@
-// import React, { useState } from 'react';
-// import MonacoEditor from '@monaco-editor/react';
-// import axios from 'axios';
-
-// const CodeEditor = () => {
-//   const [code, setCode] = useState('');
-//   const [output, setOutput] = useState('');
-
-//   const handleRunCode = async () => {
-//     try {
-//       const response = await axios.post('http://127.0.0.1:5000/execute', { code });
-//       setOutput(response.data.output);
-//     } catch (error) {
-//       setOutput('Error connecting to server or executing code');
-//     }
-//   };
-
-//   const styles = {
-//     container: {
-//       maxWidth: '1400px',
-//       margin: '0 auto',
-//       padding: '30px',
-//     },
-//     editorContainer: {
-//       border: '2px solid #ccc',
-//       borderRadius: '8px',
-//       marginBottom: '30px',
-//     },
-//     outputContainer: {
-//       marginTop: '30px',
-//       padding: '15px',
-//       border: '2px solid #ccc',
-//       borderRadius: '8px',
-//       backgroundColor: '#f9f9f9',
-//       fontSize: '20px', // Increased font size for output
-//     },
-//     button: {
-//       display: 'block',
-//       margin: '25px auto',
-//       padding: '15px 30px',
-//       backgroundColor: '#4CAF50',
-//       color: 'white',
-//       border: 'none',
-//       borderRadius: '8px',
-//       cursor: 'pointer',
-//       fontSize: '18px',
-//     },
-//   };
-
-//   return (
-//     <div style={styles.container}>
-//       <div style={styles.editorContainer}>
-//         <MonacoEditor
-//           height="500px"
-//           defaultLanguage="python"
-//           theme="vs-dark"
-//           value={code}
-//           onChange={(value) => setCode(value)}
-//           options={{
-//             fontSize: 18, 
-//           }}
-//         />
-//       </div>
-//       <button style={styles.button} onClick={handleRunCode}>
-//         Run Code
-//       </button>
-//       <div style={styles.outputContainer}>
-//         <h3>Output:</h3>
-//         <pre>{output}</pre>
-//       </div>
-//     </div>
-//   );
-// };
-
 import React, { useState } from 'react';
 import MonacoEditor from '@monaco-editor/react';
 import axios from 'axios';
@@ -83,7 +9,6 @@ const CodeEditor = () => {
   const [ isMenuOpen, setIsMenuOpen ] = useState(false);
   const [ shareMessage, setShareMessage ] = useState('');
 
-  // Handle running code
   const handleRunCode = async () => {
     try {
       const response = await axios.post('http://127.0.0.1:5000/execute', { code });
@@ -93,18 +18,15 @@ const CodeEditor = () => {
     }
   };
 
-  // Handle reset (clear code)
   const handleReset = () => {
     setCode('');
     setOutput('');
   };
 
-  // Handle fullscreen toggle
   const handleFullscreen = () => {
     setIsFullscreen(!isFullscreen);
   };
 
-  // Handle download of code as .py file
   const handleDownload = () => {
     const blob = new Blob([ code ], { type: 'text/plain' });
     const link = document.createElement('a');
@@ -113,19 +35,16 @@ const CodeEditor = () => {
     link.click();
   };
 
-  // Handle sharing code via link (Encode in URL)
   const handleShareLink = () => {
     const encodedCode = encodeURIComponent(code);
     const link = `${window.location.href}share/${encodedCode}`;
     setShareMessage(`Share this link: ${link}`);
   };
 
-  // Toggle menu visibility
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Styles
   const styles = {
     container: {
       maxWidth: '1400px',
@@ -202,12 +121,9 @@ const CodeEditor = () => {
 
   return (
     <div style={styles.container}>
-      {/* Hamburger Menu */}
       <div style={styles.hamburger} onClick={toggleMenu}>
         ☰
       </div>
-
-      {/* Menu */}
       <div style={styles.menu}>
         <div style={styles.menuItem} onClick={handleReset}>⭯ Reset</div>
         <div style={styles.menuItem} onClick={handleFullscreen}>⛶ Fullscreen</div>
@@ -215,7 +131,6 @@ const CodeEditor = () => {
         <div style={styles.menuItem} onClick={handleShareLink}>🔗 Share Link</div>
       </div>
 
-      {/* Editor Container */}
       <div style={styles.editorContainer}>
         <MonacoEditor
           height="100%"
@@ -230,18 +145,15 @@ const CodeEditor = () => {
         />
       </div>
 
-      {/* Run Code Button */}
       <button style={styles.button} onClick={handleRunCode}>
         Run Code
       </button>
 
-      {/* Output Container */}
       <div style={styles.outputContainer}>
         <h3>Output:</h3>
         <pre>{output}</pre>
       </div>
 
-      {/* Share Message */}
       { shareMessage && <div style={styles.shareMessage}>{ shareMessage }</div> }
     </div>
   );
