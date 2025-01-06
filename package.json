@@ -16,8 +16,7 @@
     "start": "react-scripts start",
     "build": "yarn react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "yarn add react-scripts"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
