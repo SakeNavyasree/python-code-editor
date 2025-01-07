@@ -1,4 +1,4 @@
-altgraph @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot2/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-124/altgraph-0.17.2-py2.py3-none-any.whl
+altgraph==0.17.2
 asgiref==3.8.1
 blinker==1.9.0
 certifi==2024.8.30
@@ -15,14 +15,14 @@ Flask==3.1.0
 Flask-Cors==5.0.0
 Flask-JWT-Extended==4.7.1
 Flask-SQLAlchemy==3.1.1
-future @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot2/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-124/future-0.18.2-py3-none-any.whl
+future==0.18.2
 greenlet==3.1.1
 gunicorn==23.0.0
 idna==3.10
 importlib_metadata==8.5.0
 itsdangerous==2.2.0
 Jinja2==3.1.4
-macholib @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot2/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-124/macholib-1.15.2-py2.py3-none-any.whl
+macholib==1.15.2
 MarkupSafe==3.0.2
 mccabe==0.7.0
 packaging==24.2
@@ -34,7 +34,7 @@ pycparser==2.22
 pyflakes==3.2.0
 PyJWT==2.10.1
 requests==2.32.3
-six @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot2/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-124/six-1.15.0-py2.py3-none-any.whl
+six==1.15.0
 SQLAlchemy==2.0.36
 sqlparse==0.5.3
 typing_extensions==4.12.2
