@@ -13,7 +13,7 @@
 // };
 import axios from 'axios';
 
-const backendUrl = 'https://python-code-editor-dli9.onrender.com'; // Updated to the deployed backend URL
+const backendUrl = 'https://python-code-editor-dli9.onrender.com'; 
 
 export const runCode = async (code) => {
   try {

@@ -6,7 +6,7 @@ import os
 import traceback
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/execute": {"origins": "python-code-editor.vercel.app"}})
 
 @app.route('/')
 def home():
