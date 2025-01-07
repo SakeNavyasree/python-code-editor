@@ -6,13 +6,13 @@ import os
 import traceback
 
 app = Flask(__name__)
-CORS(app, resources={r"/execute": {"origins": "python-code-editor.vercel.app"}})
+CORS(app)
 
 @app.route('/')
 def home():
     return "Flask app is running!"
 
-@app.route('/execute', methods=['POST'])
+@app.route('/execute', methods=['POST'])  
 def execute_code():
     code = request.json.get('code')
     
@@ -30,5 +30,4 @@ def execute_code():
     return jsonify({'output': output})
 
 if __name__ == '__main__':
-    # Use dynamic port based on environment variable
     app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
