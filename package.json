@@ -15,6 +15,7 @@
   },
  "scripts": {
    "start": "react-scripts start",
+   "build": "react-scripts build", 
   "server": "cd backend && gunicorn backend.server:app",  
   "client": "cd frontend && yarn start"  
 
