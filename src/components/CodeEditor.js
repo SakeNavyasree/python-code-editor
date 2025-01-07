@@ -11,7 +11,7 @@ const CodeEditor = () => {
 
   const handleRunCode = async () => {
     try {
-      const response = await axios.post('http://127.0.0.1:5000/execute', { code });
+      const response = await axios.post('https://python-code-editor-dli9.onrender.com/execute', { code });
       setOutput(response.data.output);
     } catch (error) {
       setOutput('Error connecting to server or executing code');
