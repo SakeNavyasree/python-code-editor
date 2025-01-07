@@ -6,7 +6,8 @@ import os
 import traceback
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "https://python-code-editor.vercel.app"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
+
 
 
 @app.route('/')
