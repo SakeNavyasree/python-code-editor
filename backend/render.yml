@@ -5,9 +5,8 @@ services:
     plan: free
     runtime: python-3.9.6
     buildCommand: |
-      python3 -m venv venv
-      source venv/bin/activate
-      pip install -r backend/requirements.txt
+      export PATH="/opt/render/project/poetry/bin:$PATH" && poetry install && yarn install && yarn build
+
     startCommand: |
       source venv/bin/activate
       python3 backend/server.py
