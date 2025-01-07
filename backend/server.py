@@ -39,7 +39,7 @@ import io
 import os
 import traceback
 
-app = Flask(__name__, static_folder='build')  # Serve static files from 'build' directory
+app = Flask(__name__, static_folder='../frontend/build') 
 CORS(app)
 
 # Route for serving the React frontend
